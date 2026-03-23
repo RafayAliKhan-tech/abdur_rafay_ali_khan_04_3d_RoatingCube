@@ -1,16 +1,63 @@
-# React + Vite
+# 3D Rotating Cube with Animated Name and Seat Number
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **React + Three.js** application that displays a 3D rotating cube with smooth color-changing animation. Simultaneously, the user's **name** and **seat number** are displayed above the cube, and they also smoothly change color randomly, synchronized with the cube animation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Demo
 
-## React Compiler
+- Cube rotates continuously in 3D space.  
+- Every 5 seconds, the cube changes to a new random color.  
+- Name (`Abdur Rafay Ali Khan`) and seat number (`B23110006004`) change color randomly in sync with the cube.  
+- Smooth color transitions for a visually appealing effect.  
+- Responsive canvas that adjusts to browser resize.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**: Frontend library for UI rendering.  
+- **Three.js**: For creating and animating the 3D cube.  
+- **JavaScript & JSX**: Animation logic and rendering.  
+- **CSS**: For header animations and styling.
+
+---
+
+## Features
+
+1. **3D Cube Rotation**  
+   The cube rotates continuously along X and Y axes.
+
+2. **Random Cube Color Animation**  
+   - Cube changes to a random color every 5 seconds.  
+   - Smooth interpolation between old and new colors.
+
+3. **Animated Name & Seat Number**  
+   - Name and seat number colors also change randomly every 5 seconds.  
+   - Smooth color transitions to match the cube's visual effect.
+
+4. **Responsive Design**  
+   - The Three.js canvas resizes automatically with the browser window.  
+   - Header remains at the top and adjusts to screen width.
+
+---
+
+## How It Works
+
+1. **Three.js Scene Setup**  
+   - Creates a scene, perspective camera, renderer, lighting, floor plane, and cube mesh.  
+   - Cube rotation is handled inside `requestAnimationFrame` loop.  
+
+2. **Color Animation**  
+   - Cube and text colors are stored as `THREE.Color` objects.  
+   - Every 5 seconds, new target colors are randomly generated.  
+   - Smooth interpolation (`lerp`) updates colors frame by frame for animation.
+
+3. **React State Integration**  
+   - Name and seat number colors are stored in React state to update the DOM.  
+   - Transitions use inline CSS `transition` for smooth effect.
+
+---
+
+**Abdur Rafay Ali Khan**
+**Seat NO : B23110006004**
